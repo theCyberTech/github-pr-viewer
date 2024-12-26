@@ -64,7 +64,7 @@ def fetch_pull_requests(
             params = {"state": status, "page": page, "per_page": 100}
 
             try:
-                response = requests.get(url, headers=headers, params=params)
+                response = requests.get(url, headers=headers, params=params, timeout=60)
                 response.raise_for_status()
 
                 batch = response.json()
